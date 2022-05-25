@@ -1,0 +1,3 @@
+[submodule "client"]
+	path = client
+	url = C:/Users/Asus/Desktop/test3/server/client/.git/
