@@ -3,7 +3,7 @@ const express=require("express");
 const bodyParser=require("body-parser");
 const cors=require("cors");
 const mongoose=require("mongoose");
-const path=require("path/posix");
+const path=require("path");
 const app=express();
 
 app.use(bodyParser.json());
@@ -179,28 +179,28 @@ app.post("/edit",function(req,res){
 
 const PORT=process.env.PORT || 3001;
 
-app.use(express.static(path.resolve(__dirname,"/client/build")));
+// app.use(express.static(path.join(__dirname,"/client/build")));
 
-app.get('/',(req,res)=>{
-  res.sendFile(path.resolve(__dirname,"/client/public/index.html"));
-})
+// app.get('/',(req,res)=>{
+//   res.sendFile(path.join(__dirname,"/client/build/index.html"));
+// })
 
-app.get("/",function(req,res){
-  res.send("Hello");
-});
+// app.get("/",function(req,res){
+//   res.send("Hello");
+// });
 
 
-// if(process.env.NODE_ENV=="production"){
-//   app.get('*',(req,res)=>{
-//     app.use(express.static(path.join(__dirname,"/client/build")));
-//     res.sendFile(path.join(__dirname,'client','build','index.html'));
-//   })
-// }
-// else{
-//   app.get("/finanza",function(req,res){
-//     res.send("Hello");
-//   });
-// }
+if(process.env.NODE_ENV=="production"){
+  app.get('*',(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,'client','build','index.html'));
+  })
+}
+else{
+  app.get("/finanza",function(req,res){
+    res.send("Hello");
+  });
+}
 
 app.listen(PORT,(err)=>{
     if(err){
