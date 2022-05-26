@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, Form,Alert } from "react-bootstrap";
-import NavBar from "./Navbar";
 //Used for redirecting
 import { useNavigate } from "react-router-dom";
 import pic from "./images/remove.png";
