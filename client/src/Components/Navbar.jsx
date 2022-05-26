@@ -27,7 +27,7 @@ function NavBar() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav>
-            {isLogin && <a className="item" href="add">Account Master</a>}
+            {isLogin && <Nav.Link className="item" href="add">Account Master</Nav.Link>}
             {isLogin && <Nav.Link className="item" href="view">View Records</Nav.Link>}
             {isLogin && <Nav.Link className="item" href="edit">Edit Record</Nav.Link>}
             {isLogin && <Nav.Link className="item" href="delete">Delete Record</Nav.Link>}
