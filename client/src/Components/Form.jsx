@@ -76,7 +76,7 @@ function FormSub() {
     // }
 
     event.preventDefault();
-    fetch("http://localhost:3001/finanza/api",{
+    fetch("http://localhost:3001/api",{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

@@ -44,7 +44,7 @@ function Delete(){
     function handleSubmit(event){
         event.preventDefault();
 
-        fetch("http://localhost:3001/finanza/delete",{
+        fetch("http://localhost:3001/delete",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

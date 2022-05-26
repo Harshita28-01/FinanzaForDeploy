@@ -14,7 +14,7 @@ function View(){
   const [query,setQuery] = React.useState("");
 
     useEffect(() => {
-       fetch("http://localhost:3001/finanza/stored-data")
+       fetch("http://localhost:3001/stored-data")
        .then(res=>res.json())
        .then(data =>{
           setData(data);

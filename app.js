@@ -41,7 +41,7 @@ const Deposit=mongoose.model("Deposit",depositSchema);
 const Login=mongoose.model("Login",userSchema);
 
 //for viewing data
-app.get("/finanza/stored-data",function(req,res){
+app.get("/stored-data",function(req,res){
   Deposit.find({},function(err,result){
     if(!err){
       // console.log(result);
@@ -51,7 +51,7 @@ app.get("/finanza/stored-data",function(req,res){
 });
 
 //for adding record of bank details
-app.post("/finanza/api",function(req,res){
+app.post("/api",function(req,res){
   const fullBankDetail=new Deposit({
     username:req.body.username,
     acNo:req.body.acNo ,
@@ -84,7 +84,7 @@ app.post("/finanza/api",function(req,res){
 });
 
 //for monitoring sign up request
-app.post("/finanza/signUp",function(req,res){
+app.post("/signUp",function(req,res){
   // console.log(req.body.username);
   // console.log(req.body.password);
 
@@ -108,7 +108,7 @@ app.post("/finanza/signUp",function(req,res){
 
 });
 
-app.post("/finanza/log-in",function(req,res){
+app.post("/log-in",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   Login.find({username:username1,password:password1},function(err,result){
@@ -125,7 +125,7 @@ app.post("/finanza/log-in",function(req,res){
   });
 });
 
-app.post("/finanza/delete",function(req,res){
+app.post("/delete",function(req,res){
   let username1=req.body.username;
   let acNo1=req.body.acNo;
   let certiNo1=req.body.certiNo;
@@ -138,7 +138,7 @@ app.post("/finanza/delete",function(req,res){
   res.send("Deleted");
 })
 
-app.post("/finanza/edit",function(req,res){
+app.post("/edit",function(req,res){
   const fullBankDetail=new Deposit({
     username:req.body.username,
     acNo:req.body.acNo ,
@@ -179,7 +179,7 @@ app.post("/finanza/edit",function(req,res){
 
 const PORT=process.env.PORT || 3001;
 
-app.get("/finanza",function(req,res){
+app.get("/",function(req,res){
   res.send("Hello");
 });
 app.use(express.static(path.resolve(__dirname,"/client/build")));
