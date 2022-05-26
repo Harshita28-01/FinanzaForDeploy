@@ -7,7 +7,7 @@
     ],
     "routes":[
         {
-            "src":"/(.*)",
+            "src":"/finanza/(.*)",
             "dest":"/app.js"
         }
     ]
