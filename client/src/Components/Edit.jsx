@@ -64,7 +64,7 @@ function FormSub() {
     alert("A form was submitted: "+fullBankDetail.acHolder);
 
     event.preventDefault();
-    fetch("http://localhost:3001/edit",{
+    fetch("http://localhost:3001/finanza/edit",{
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({

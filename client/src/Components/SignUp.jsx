@@ -47,7 +47,7 @@ function SignUp(){
     function handleSubmit(event){
         event.preventDefault();
         if(signUp.password===signUp.confirmPassword){
-            fetch("http://localhost:3001/signUp",{
+            fetch("http://localhost:3001/finanza/signUp",{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
