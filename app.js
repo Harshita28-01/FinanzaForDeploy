@@ -190,13 +190,13 @@ const PORT=process.env.PORT || 3001;
 // });
 
 if(process.env.NODE_ENV=="production"){
-  app.get('/finanza',(req,res)=>{
+  app.get('/',(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
 }
 else{
-  app.get("/finanza",function(req,res){
+  app.get("/",function(req,res){
     res.send("Hello");
   });
 }
