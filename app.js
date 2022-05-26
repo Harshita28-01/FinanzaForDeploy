@@ -108,7 +108,8 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post("/finanza/log-in",function(req,res){
+
+app.post("/log-in",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   Login.find({username:username1,password:password1},function(err,result){
@@ -207,3 +208,5 @@ app.listen(PORT,(err)=>{
     }
     console.log("Server working in 3001");
 });
+
+module.exports = app;
