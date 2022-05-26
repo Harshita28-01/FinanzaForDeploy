@@ -2,7 +2,6 @@ import React from "react";
 import { Button, Form,Alert } from "react-bootstrap";
 //Used for redirecting
 import { useNavigate } from "react-router-dom";
-import NavBar from "./Navbar";
 import pic from "./images/remove.png";
 
 function Login(props){
@@ -39,7 +38,7 @@ function Login(props){
     function handleSubmit(event){
         event.preventDefault();
 
-        fetch("http://localhost:3001/log-in",{
+        fetch("http://localhost:3001/login",{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

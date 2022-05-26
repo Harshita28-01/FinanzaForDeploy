@@ -108,7 +108,7 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post("/log-in",function(req,res){
+app.post("/login",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   Login.find({username:username1,password:password1},function(err,result){
@@ -191,7 +191,7 @@ const PORT=process.env.PORT || 3001;
 
 
 if(process.env.NODE_ENV=="production"){
-  app.get('/',(req,res)=>{
+  app.get('*',(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
