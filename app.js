@@ -108,7 +108,7 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post("/login",function(req,res){
+app.post("/fin/login",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   console.log(username1,password1);
@@ -178,7 +178,7 @@ app.post("/edit",function(req,res){
   });
 });
 
-const PORT=process.env.PORT || 3001;
+const PORT=process.env.PORT || 3000;
 
 // app.use(express.static(path.join(__dirname,"/client/build")));
 
@@ -210,10 +210,10 @@ if(process.env.NODE_ENV=="production"){
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
   app.get("/login",(req,res)=>{
-    console.log(req);
+    // console.log(req);
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
-    console.log(path.join(__dirname,"client","build","index.html"));
+    // console.log(path.join(__dirname,"client","build","index.html"));
   })
   app.get("/logout",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
