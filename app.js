@@ -126,9 +126,6 @@ app.post("/login",function(req,res){
   });
 });
 
-app.get("/login",function(req,res){
-})
-
 app.post("/delete",function(req,res){
   let username1=req.body.username;
   let acNo1=req.body.acNo;
@@ -217,7 +214,6 @@ app.listen(PORT,(err)=>{
         console.log(err);
     }
     console.log("Server working in 3001");
-    console.log(path.join(__dirname,"client","build","index.html"));
 });
 
-module.exports = app;
+// module.exports = app;
