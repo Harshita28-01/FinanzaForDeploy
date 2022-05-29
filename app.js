@@ -193,8 +193,10 @@ const PORT=process.env.PORT || 3000;
 //   res.send("Hello");
 // });
 
+
+
 if(process.env.NODE_ENV=="production"){
-  app.get('*.*',(req,res)=>{
+  app.get('/.',(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
@@ -211,6 +213,7 @@ app.listen(PORT,(err)=>{
         console.log(err);
     }
     console.log("Server working in 3001");
+    console.log(path.join(__dirname,"client","build","index.html"));
 });
 
 module.exports = app;
