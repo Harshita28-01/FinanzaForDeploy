@@ -19,7 +19,7 @@ export default function App() {
         <Route path="/add" element={<Form />} />
         <Route path="/view" element={<View />} />
         <Route path="/sign-up" element={<SignUp />} />        
-        <Route path="https://finanza-gamma.vercel.app/login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/delete" element={<Delete />} />
         <Route path="/edit" element={<Edit />} />
