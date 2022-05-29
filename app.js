@@ -108,27 +108,27 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post("/login",function(req,res){
-  let username1=req.body.username;
-  let password1=req.body.password;
-  // console.log(username1,password1);
-  Login.find({username:username1,password:password1},function(err,result){
-    if(!err){
-      if(result.length===0){
-        res.json({data:0});
-      }
-      else{
-        res.json({data:1});
-      }
-    }else{
-      res.send(err);
-    }
-  });
-});
+// app.get("/login",function(req,res){
+//   res.send("hello");
+// })
 
-app.get("/login",function(req,res){
-  res.send("hello");
-})
+// app.post("/login",function(req,res){
+//   let username1=req.body.username;
+//   let password1=req.body.password;
+//   // console.log(username1,password1);
+//   Login.find({username:username1,password:password1},function(err,result){
+//     if(!err){
+//       if(result.length===0){
+//         res.json({data:0});
+//       }
+//       else{
+//         res.json({data:1});
+//       }
+//     }else{
+//       res.send(err);
+//     }
+//   });
+// });
 
 app.post("/delete",function(req,res){
   let username1=req.body.username;
