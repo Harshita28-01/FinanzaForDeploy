@@ -108,7 +108,7 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post("/fin/login",function(req,res){
+app.post(`${PORT}/fin/login`,function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   console.log(username1,password1);
