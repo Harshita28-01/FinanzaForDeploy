@@ -111,7 +111,7 @@ app.post("/signUp",function(req,res){
 app.post("/login",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
-  // console.log(username1,password1);
+  console.log(username1,password1);
   Login.find({username:username1,password:password1},function(err,result){
     if(!err){
       if(result.length===0){
@@ -192,12 +192,32 @@ const PORT=process.env.PORT || 3001;
 
 
 
-if(process.env.NODE_ENV=="production"){
+if(process.env.NODE_ENV=="development"){
   app.get("/",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
   app.get("/login",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/stored-data",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/api",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/signUp",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/delete",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/edit",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
