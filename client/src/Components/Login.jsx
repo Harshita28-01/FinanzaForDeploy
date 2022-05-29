@@ -37,7 +37,7 @@ function Login(props){
 
     function handleSubmit(event){
         event.preventDefault();
-        fetch(`https://${process.env.VERCEL_URL}/fin/login`,{
+        fetch(`http://localhost:3001/fin/login`,{
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
