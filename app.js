@@ -192,40 +192,40 @@ app.post("/edit",function(req,res){
 
 
 if(process.env.NODE_ENV=="production"){
-  app.get(`/*`,(req,res)=>{
+  app.get(`/`,(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
-  // app.get("/add",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/view",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/sign-up",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/login",(req,res)=>{
-  //   // console.log(req);
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  //   // console.log(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/logout",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/delete",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
-  // app.get("/edit",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
+  app.get("/add",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/view",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/sign-up",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/login",(req,res)=>{
+    // console.log(req);
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+    // console.log(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/logout",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/delete",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/edit",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
 }
 else{
   app.get("/",function(req,res){
