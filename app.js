@@ -109,10 +109,6 @@ app.post("/signUp",function(req,res){
 });
 
 app.get("/login",function(req,res){
-  res.send("hello");
-})
-
-app.post("/login",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   console.log(username1,password1);
@@ -129,6 +125,10 @@ app.post("/login",function(req,res){
     }
   });
 });
+
+app.get("/login",function(req,res){
+  res.send("hello");
+})
 
 app.post("/delete",function(req,res){
   let username1=req.body.username;
