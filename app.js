@@ -197,19 +197,27 @@ if(process.env.NODE_ENV=="production"){
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
+  app.get("/add",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  // app.get("/stored-data",(req,res)=>{
+  //   app.use(express.static(path.join(__dirname,"/client/build")));
+  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
+  // })
+  app.get("/view",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
+  app.get("/sign-up",(req,res)=>{
+    app.use(express.static(path.join(__dirname,"/client/build")));
+    res.sendFile(path.join(__dirname,"client","build","index.html"));
+  })
   app.get("/login",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
-  app.get("/stored-data",(req,res)=>{
-    app.use(express.static(path.join(__dirname,"/client/build")));
-    res.sendFile(path.join(__dirname,"client","build","index.html"));
-  })
-  app.get("/api",(req,res)=>{
-    app.use(express.static(path.join(__dirname,"/client/build")));
-    res.sendFile(path.join(__dirname,"client","build","index.html"));
-  })
-  app.get("/signUp",(req,res)=>{
+  app.get("/logout",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
