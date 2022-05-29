@@ -40,6 +40,7 @@ const Deposit=mongoose.model("Deposit",depositSchema);
 
 const Login=mongoose.model("Login",userSchema);
 
+const PORT=process.env.PORT || 3000;
 //for viewing data
 app.get("/stored-data",function(req,res){
   Deposit.find({},function(err,result){
@@ -177,8 +178,6 @@ app.post("/edit",function(req,res){
     }
   });
 });
-
-const PORT=process.env.PORT || 3000;
 
 // app.use(express.static(path.join(__dirname,"/client/build")));
 
