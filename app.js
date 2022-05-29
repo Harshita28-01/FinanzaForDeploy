@@ -108,10 +108,10 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.get("/login",function(req,res){
+app.post("/login",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
-  console.log(username1,password1);
+  // console.log(username1,password1);
   Login.find({username:username1,password:password1},function(err,result){
     if(!err){
       if(result.length===0){
