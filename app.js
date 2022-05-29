@@ -201,10 +201,6 @@ if(process.env.NODE_ENV=="production"){
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
-  // app.get("/stored-data",(req,res)=>{
-  //   app.use(express.static(path.join(__dirname,"/client/build")));
-  //   res.sendFile(path.join(__dirname,"client","build","index.html"));
-  // })
   app.get("/view",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
@@ -214,8 +210,10 @@ if(process.env.NODE_ENV=="production"){
     res.sendFile(path.join(__dirname,"client","build","index.html"));
   })
   app.get("/login",(req,res)=>{
+    console.log(req);
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
+    console.log(path.join(__dirname,"client","build","index.html"));
   })
   app.get("/logout",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
