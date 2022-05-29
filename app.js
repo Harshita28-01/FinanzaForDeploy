@@ -195,7 +195,7 @@ const PORT=process.env.PORT || 3000;
 
 
 
-if(process.env.NODE_ENV=="development"){
+if(process.env.NODE_ENV=="production"){
   app.get("/" || "/login",(req,res)=>{
     app.use(express.static(path.join(__dirname,"/client/build")));
     res.sendFile(path.join(__dirname,"client","build","index.html"));
