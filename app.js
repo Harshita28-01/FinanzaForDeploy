@@ -109,7 +109,7 @@ app.post("/signUp",function(req,res){
 
 });
 
-app.post(`/fin/login`,function(req,res){
+app.post("/log-in",function(req,res){
   let username1=req.body.username;
   let password1=req.body.password;
   console.log(username1,password1);
@@ -238,7 +238,7 @@ app.listen(PORT,(err)=>{
     if(err){
         console.log(err);
     }
-    console.log("Server working in 3001");
+    console.log(`Server working in ${PORT}`);
 });
 
-// module.exports = app;
+module.exports = app;
