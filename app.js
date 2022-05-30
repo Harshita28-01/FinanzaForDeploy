@@ -85,7 +85,7 @@ app.post("/api",function(req,res){
 });
 
 //for monitoring sign up request
-app.post("/signUp",function(req,res){
+app.post("/signup",function(req,res){
   // console.log(req.body.username);
   // console.log(req.body.password);
 

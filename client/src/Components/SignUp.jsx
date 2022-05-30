@@ -47,7 +47,7 @@ function SignUp(){
     function handleSubmit(event){
         event.preventDefault();
         if(signUp.password===signUp.confirmPassword){
-            fetch("/signUp",{
+            fetch("/signup",{
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -56,6 +56,7 @@ function SignUp(){
             })
             }).then(response => response.json())
             .then((result) => {
+                console.log(result);
                 if(result.data===0){
                     setError("Already have a user with this username!");
                     setIsError(true);
