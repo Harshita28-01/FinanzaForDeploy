@@ -93,7 +93,6 @@ app.post("/signup",function(req,res){
     username:req.body.username,
     password:req.body.password
   });
-  console.log(username+" "+password);
   Login.find({username:user.username},function(err,result){
     if(!err){
       if(result.length===0){
